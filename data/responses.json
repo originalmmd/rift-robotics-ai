@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "intents": [
+    {
+      "id": "PING",
+      "match": { "any": ["ping", "test", "hello bot"] },
+      "reply": ["Systems respond. Memory fragments stable."],
+      "voice_fx": "archive",
+      "actions": {
+        "led": [{ "id": "status", "mode": "pulse", "ms": 600 }]
+      }
+    }
+  ],
+  "fallback": {
+    "reply": ["I can’t reconstruct that. Try again."],
+    "voice_fx": "archive",
+    "actions": {
+      "led": [{ "id": "status", "mode": "blink", "ms": 250 }]
+    }
+  }
+}
