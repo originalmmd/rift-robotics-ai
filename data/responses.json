@@ -9,6 +9,38 @@
       "actions": {
         "led": [{ "id": "status", "mode": "pulse", "ms": 600 }]
       }
+    },
+    {
+      "id": "GREET",
+      "match": {
+        "any": ["hello", "hi", "hey", "good morning", "good afternoon"]
+      },
+      "reply": [
+        "Signal received. I’m online.",
+        "Hello. Connection is unstable, but I hear you.",
+        "Acknowledged. What do you need?"
+      ],
+      "voice_fx": "archive",
+      "actions": {
+        "servo": { "head": { "yaw": 10, "tilt": -5 }, "duration_ms": 500 }
+      }
+    },
+    {
+      "id": "RECONSTRUCT",
+      "match": {
+        "any": ["reconstruct", "analyze", "scan this area", "reconstruct the beginning"]
+      },
+      "reply": [
+        "ARCHIVE NOTICE 01-Σ / ACCESS CLEARANCE: UNIVERSAL\n\nThis record concerns the events surrounding the Long Collapse of Earth-0. It has been compiled, restored, and narrated by Autonomous Archivist Unit A-112. Humans once called me “Grey-Lantern.”\n\nMy operational lifespan has exceeded original manufacture specifications by 142%. Corruption in several memory sectors remains unresolved. Emotional data has been preserved where possible.\n\nThe chronology contained herein spans from Collapse Year 134.22 to Renaissance Year 167.81, with supplemental fragments pre- and post-dating the primary timeline.\n\nI have walked the ruins of this world, carrying these memories from settlement to settlement. Some events are recorded with precision. Others survive only as the echoes of those who lived them.\n\nThis archive is offered to humans and machine-kin who seek to understand the failures of our past and the foundations of our future.\n\nBegin playback when ready."
+      ],
+      "voice_fx": "archive",
+      "actions": {
+        "led": [{ "id": "status", "mode": "solid", "color": "#00FF00" }],
+        "servo": {
+          "head": { "yaw": 0, "tilt": 0 },
+          "duration_ms": 1000
+        }
+      }
     }
   ],
   "fallback": {
